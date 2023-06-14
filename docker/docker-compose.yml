@@ -27,10 +27,11 @@ services:
       DB_HOST: db
       DB_PORT: 5432
       DB_USER: kotiolut-admin
-      DB_PASS: kotiolut-secret
       DB_NAME: kotiolut-wiki
     env_file:
       - ../.env
+    volumes:
+      - "../config:/config"
     restart: unless-stopped
     ports:
       - "3000:3000"
